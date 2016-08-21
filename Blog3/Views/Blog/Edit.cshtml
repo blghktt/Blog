@@ -1,0 +1,30 @@
+﻿@using Blog3.Models
+
+@model EditModel
+
+
+@using (Html.BeginForm())
+{
+
+    @Html.ValidationSummary();
+    <div>
+
+        @Html.Label("Blog Címe")
+
+        @Html.TextBoxFor(m => m.Cim)
+
+    </div>
+
+    <div>
+        @Html.Label("Tartalma")
+
+        @Html.TextAreaFor(m => m.Tartalom)
+
+    </div>
+
+
+    <button type="submit" class="btn btn-default">Mentés</button>
+
+}
+
+

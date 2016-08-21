@@ -1,0 +1,30 @@
+﻿@using Blog3.Models
+
+@model List<EditModel>
+
+@if (ViewContext.RouteData.GetRequiredString("Controller") == "Blog")
+{
+    @Html.ActionLink("Új bejegyzés", "Edit", "Blog")
+}
+
+
+
+@foreach (EditModel m in Model)
+{
+    <div>
+        <div>
+            @m.Cim
+
+            @m.Idopont
+            @if (ViewContext.RouteData.GetRequiredString("Controller") == "Blog")
+            {
+                @Html.ActionLink("Szerkesztés", "Szerkesztes", new { id=m.Id})
+            }
+
+        </div>
+        <div>
+            @m.Tartalom
+        </div>
+    </div>
+}
+

@@ -1,0 +1,22 @@
+﻿@model Blog3.Models.LoginModel
+
+<h3>
+    Bejelentkezés
+</h3>
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary()
+<div>
+    @Html.LabelFor(m => m.UserName)
+    @Html.TextBoxFor(m=> m.UserName)
+</div>
+
+<div>
+    @Html.LabelFor(m => m.Passwd)
+    @Html.PasswordFor(m => m.Passwd)
+</div>
+<div>
+    <button type="submit" class="btn btn-default">Bejelentkezés</button>
+</div>
+}

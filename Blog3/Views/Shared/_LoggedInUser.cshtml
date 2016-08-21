@@ -1,0 +1,16 @@
+﻿@if (User.Identity.IsAuthenticated)
+{
+    <div class="navbar-inverse navbar-right>
+        @User.Identity.Name
+    </div>
+
+    <div class="navbar-right">
+        @Html.ActionLink("Kijelentkezés", "index", "Logout", null, new { @class = "btn btn-default" })
+    </div>
+}
+else
+{
+    <div class="navbar-right">
+        @Html.ActionLink("Bejelentkezés", "Index", "Login", null, new { @class = "btn btn-default" })
+    </div>
+}
